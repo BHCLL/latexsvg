@@ -51,8 +51,11 @@ class ScriptBox(QtGui.QPlainTextEdit):
         texfile.write(texstr)
         texfile.close()
         
-        cmd1 = "pdflatex " + "standalone.tex"
+        cmd1 = "pdflatex " + "standalone.tex"        
         os.system(cmd1)
+        
+        cmd10 = "latex " + "standalone.tex"
+        os.system(cmd10)
 
         if self.multilines == 1:
 
@@ -62,7 +65,8 @@ class ScriptBox(QtGui.QPlainTextEdit):
         cmd2 = "convert -density 800 standalone.pdf standalone.png"
         os.system(cmd2)
 
-        cmd3 = "pdf2svg standalone.pdf standalone.svg"
+  #      cmd3 = "pdf2svg standalone.pdf standalone.svg"
+        cmd3 = "dvisvgm --no-fonts standalone.dvi"
         os.system(cmd3)
         print 'emit'
         self.reDraw.emit()
