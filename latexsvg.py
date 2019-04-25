@@ -138,8 +138,6 @@ class DragButton(QtGui.QPushButton):
         
     def on_click(self):
 
-     ##   print "Hello"
-
         pass
 
     def mouseMoveEvent(self, e):
@@ -202,7 +200,6 @@ class Display(QtGui.QWidget):
         if self.initStatus != 0:
             
             img1 = QPixmap("standalone.png")
-          ##  img2 = img1.scaledToWidth(200)
 
             width = img1.size().width()
             height = img1.size().height()
@@ -219,7 +216,6 @@ class Display(QtGui.QWidget):
             
         else:
             self.initStatus = 1
-        ##    print 'Hi'
 
         p.end()
         
